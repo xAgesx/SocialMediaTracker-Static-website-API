@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>X Username Display</title>
+</head>
+<body>
+    <p id="username-display">Loading username...</p>
+
+    <script>
+        const bearerToken = 'AAAAAAAAAAAAAAAAAAAAAE1dxwEAAAAAd%2BYM89XYl5nXuSCTDvw8%2F78a5pc%3DN1pVdwtZ7NkDbEkhSYK91bsRD69vVFfNyExg1sZce0vCw90zN9'; 
+        const userId = '1874006361043808256';
+        const proxyUrl = 'https://proxy.corsfix.com/?'; // Public CORS proxy (for testing only)
+
+        async function displayUsername() {
+            try {
+                const endpoint = proxyUrl + 'https://api.twitter.com/2/users/${userId}';
+
+                const response = await fetch(endpoint, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${bearerToken}`
+                    }
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error("Error fetching user data:", response.status, errorText);
+                    document.getElementById('username-display').textContent = `Error: ${response.status} - ${errorText}`;
+                    return;
+                }
+
+                const data = await response.json();
+
+                if (data.data && data.data.username) {
+                    document.getElementById('username-display').textContent = `@${data.data.username}`;
+                } else {
+                    console.error("Username not found in response:", data);
+                    document.getElementById('username-display').textContent = "Username not found.";
+                }
+
+            } catch (error) {
+                console.error("An error occurred:", error);
+                document.getElementById('username-display').textContent = "An error occurred.";
+            }
+        }
+
+        displayUsername();
+    </script>
+</body>
+</html>

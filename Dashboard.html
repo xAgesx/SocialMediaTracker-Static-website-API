@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Media App</div>
+        <ul class="nav-links">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="accounts.html">Accounts</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="LandingPage.html">Home</a></li>
+        </ul>
+        <div class="user-profile">
+            <img src="Img/placeholder-profile.png" alt="Profile Picture"> <span id="user-name">User Name</span>
+        </div>
+        <div class="menu-toggle">&#9776;</div>
+    </nav>
+
+    <main class="insights-page">
+        <section class="overview-metrics">
+            <h2>Overview Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <h3>Followers</h3>
+                    <span class="value">10.5K</span>
+                </div>
+                <div class="metric">
+                    <h3>Engagements</h3>
+                    <span class="value">500</span>
+                </div>
+                <div class="metric">
+                    <h3>Reach </h3>
+                    <span class="value">1200</span>
+                </div>
+                <div class="metric">
+                    <h3>Total Impressions</h3>
+                    <span class="value">500k</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="top-content">
+            <h2>Platforms Performance</h2>
+            <div class="chartContainer">
+                <div class="canvas"><canvas id="chartContainerPlatforms"></canvas></div>
+            </div>
+        </section>
+
+        <section id="audience-demographics" class="audience-demographics">
+            <h2>Audience Demographics</h2>
+            <div class="chartContainer">
+                <div class="canvas"><canvas id="chartContainerCountries"></canvas></div>
+                <div class="canvas"><canvas id="chartContainerAge"></canvas></div>
+            </div>
+            
+            </section>
+
+        <section class="latest-followers">
+            <h2>Latest Followers</h2>
+            <table class="following-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Followed On</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Echo Verse</p>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <script src="Dashboard.js"></script>
+</body>
+
+</html>

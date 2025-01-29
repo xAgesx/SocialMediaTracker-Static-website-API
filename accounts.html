@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Accounts</title>
+    <link rel="stylesheet" href="accounts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <main>
+        <section class="accounts">
+            <header>
+                <h2>Connected Accounts</h2>
+                <a href="Dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+            </header>
+            
+            <div class="account-list">
+
+                <div class="account-card" data-platform="twitter">
+                    <div class="account-header">
+                        <img src="twitter-logo.png" alt="Twitter Logo">
+                        <h3>@YourTwitterHandle</h3>
+                    </div>
+                    <div class="account-details">
+                        <p><i class="fas fa-user"></i> 10.5K Followers</p>
+                        <p><i class="fas fa-chart-line"></i> Avg. Engagement: 250</p>
+                    </div>
+                    <div class="account-actions">
+                        <button class="view-insights"><a href="insights.html">View Insights</a></button>
+                        <button class="disconnect-btn">Disconnect</button>
+                    </div>
+                    <div class="account-status active">
+                        <i class="fas fa-check-circle"></i> Connected
+                    </div>
+                </div>
+
+                <div class="account-card" data-platform="instagram">
+                    <div class="account-header">
+                        <img src="instagram-logo.png" alt="Instagram Logo">
+                        <h3>@YourInstagramHandle</h3>
+                    </div>
+                     <div class="account-details">
+                        <p><i class="fas fa-user"></i> 5.2K Followers</p>
+                        <p><i class="fas fa-heart"></i> Avg. Likes: 150</p>
+                    </div>
+                    <div class="account-actions">
+                        <button class="view-insights">View Insights</button>
+                        <button class="disconnect-btn">Disconnect</button>
+                    </div>
+                    <div class="account-status inactive">
+                        <i class="fas fa-exclamation-triangle"></i> Reconnect Required
+                    </div>
+                </div>
+
+                <div class="account-card" data-platform="Facebook">
+                    <div class="account-header">
+                        <img src="Facebook-logo.png" alt="Facebook Logo">
+                        <h3>Facebook Name</h3>
+                    </div>
+                     <div class="account-details">
+                        <p><i class="fas fa-user"></i> Unknown </p>
+                        <p><i class="fas fa-heart"></i> Unknown  </p>
+                    </div>
+                    <div class="account-actions">
+                        <button class="view-insights">View Insights</button>
+                        <button class="Connect-btn">Connect</button>
+                    </div>
+                    <div class="account-status inactive">
+                        <i class="fas fa-exclamation-triangle"></i> Account not connected yet
+                    </div>
+                </div>
+
+                <div class="account-card" data-platform="LinkedIn">
+                    <div class="account-header">
+                        <img src="LinkedIn-logo.png" alt="LinkedIn Logo">
+                        <h3>LinkedIn Profile</h3>
+                    </div>
+                     <div class="account-details">
+                        <p><i class="fas fa-user"></i> Unknown</p>
+                        <p><i class="fas fa-heart"></i> Unknown</p>
+                    </div>
+                    <div class="account-actions">
+                        <button class="view-insights">View Insights</button>
+                        <button class="Connect-btn">Connect</button>
+                    </div>
+                    <div class="account-status inactive">
+                        <i class="fas fa-exclamation-triangle"></i> Account not connected yet
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>X Username Display</title>
+</head>
+
+<body>
+    <p id="username-display">Loading username...</p>
+
+    <script>
+        const userId = '1874006361043808256';
+        const proxyUrl = 'https://proxy.corsfix.com/?'; // Public CORS proxy (for testing only)
+
+        async function displayUsername() {
+            try {
+                const endpoint = proxyUrl + 'https://api.wynncraft.com/v3/item/database?fullResult';
+
+                const response = await fetch(endpoint, {
+                    method: 'GET',
+
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error("Error fetching user data:", response.status, errorText);
+                    document.getElementById('username-display').textContent = `Error: ${response.status} - ${errorText}`;
+                    return;
+                }
+
+                const data = await response.json();
+
+                if (data) {
+                    // document.getElementById('username-display').textContent = data.name;
+                    console.log(data);
+
+                    /* for (let itemName in data) {
+                        let itemData = data[itemName];
+                        let itemType = itemData.type;
+
+                        if(itemType === "ingredient" && itemData.requirements.level <= 40 && itemData.requirements.skills.includes("cooking")){
+                            console.log(itemName +" : "  );
+
+                            for(let id in itemData.identifications){
+                                console.log("     " + id +" ");
+                                if(id === "xpBonus"){
+                                    console.log("===+=== > \n"+ itemData);
+                                }
+                            }
+                            
+                        }
+                    } */
+
+                } else {
+                    console.error("Username not found in response:", data);
+                    //document.getElementById('username-display').textContent = "Username not found.";
+                }
+
+            } catch (error) {
+                console.error("An error occurred:", error);
+                document.getElementById('username-display').textContent = "An error occurred.";
+            }
+        }
+
+        displayUsername();
+    </script>
+</body>
+
+</html>
