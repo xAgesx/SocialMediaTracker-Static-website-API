@@ -1,1 +1,0 @@
-In order to properly render the API you will need a server , you can use the live server extension if you are using VsCode , otherwise there maybe problems displaying the insights.html page 
